@@ -38,6 +38,5 @@ class ShoppingListItem extends StatelessWidget {
       ),
       title: Text(product.name, style: _getTextStyle(context)),
     );
-    ;
   }
 }
