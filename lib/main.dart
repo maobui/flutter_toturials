@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_toturials/TutorialHome.dart';
+import 'package:flutter_toturials/Product.dart';
+import 'package:flutter_toturials/ShoppingList.dart';
 
 void main() => runApp(MaterialApp(
-  title: 'Flutter tutorial', // used by the OS task switcher
-  home: TutorialHome(),
-));
+  title: 'Shopping App',
+  home: ShoppingList(
+    products: <Product>[
+      Product(name: 'Eggs'),
+      Product(name: 'Flour'),
+      Product(name: 'Chocolate chips'),
+    ],
+  ),
+)
+);
 
