@@ -193,13 +193,13 @@ class Layouts extends StatelessWidget {
     );
   }
 
-  Widget buttionSection = Container(
+  Widget buttonSection = Container(
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        _buildButtonColumn(Colors.red, Icons.call, "CALL"),
-        _buildButtonColumn(Colors.red, Icons.near_me, "NEAR ME"),
-        _buildButtonColumn(Colors.red, Icons.share, "SHARE"),
+        _buildButtonColumn(Colors.blue[500], Icons.call, "CALL"),
+        _buildButtonColumn(Colors.blue[500], Icons.near_me, "NEAR ME"),
+        _buildButtonColumn(Colors.blue[500], Icons.share, "SHARE"),
       ],
     ),
   );
@@ -274,7 +274,7 @@ class Layouts extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             titleSection,
-            buttionSection,
+            buttonSection,
             textSection,
           ],
         );
