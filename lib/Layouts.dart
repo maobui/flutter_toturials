@@ -265,7 +265,7 @@ class Layouts extends StatelessWidget {
           child: _buildCard(),
         );
       case 5:
-        return Column(
+        return ListView(
           children: [
             Image.asset(
               'images/lake.jpg',
