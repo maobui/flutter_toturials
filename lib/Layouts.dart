@@ -2,166 +2,292 @@ import 'package:flutter/material.dart';
 
 class Layouts extends StatelessWidget {
   static final _useGridView = false;
-  @override
-  Widget build(BuildContext context) {
-    final titleText = Container(
-      padding: EdgeInsets.all(16),
-      child: Text(
-        'Strawberry Pavlova',
-        style: TextStyle(
-          fontWeight: FontWeight.w800,
-          letterSpacing: 0.5,
-          fontSize: 20,
-        ),
-      ),
-    );
+  static final _bodyIndex = 5;
 
-    final subTitle = Text(
-      'Pavlova is a meringue-based dessert named after the Russian ballerina '
-      'Anna Pavlova. Pavlova features a crisp crust and soft, light inside, '
-      'topped with fruit and whipped cream.',
-      textAlign: TextAlign.center,
+  static final titleText = Container(
+    padding: EdgeInsets.all(16),
+    child: Text(
+      'Strawberry Pavlova',
       style: TextStyle(
-        fontFamily: 'Georgia',
-        fontSize: 15,
+        fontWeight: FontWeight.w800,
+        letterSpacing: 0.5,
+        fontSize: 20,
       ),
-    );
+    ),
+  );
 
-    final stars = Row(
-      mainAxisSize: MainAxisSize.min,
+  static final subTitle = Text(
+    'Pavlova is a meringue-based dessert named after the Russian ballerina '
+    'Anna Pavlova. Pavlova features a crisp crust and soft, light inside, '
+    'topped with fruit and whipped cream.',
+    textAlign: TextAlign.center,
+    style: TextStyle(
+      fontFamily: 'Georgia',
+      fontSize: 15,
+    ),
+  );
+
+  static final stars = Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.star,
+        color: Colors.blue[500],
+      ),
+      Icon(
+        Icons.star,
+        color: Colors.blue[500],
+      ),
+      Icon(
+        Icons.star,
+        color: Colors.blue[500],
+      ),
+      Icon(
+        Icons.star,
+        color: Colors.black,
+      ),
+      Icon(
+        Icons.star,
+        color: Colors.black,
+      ),
+    ],
+  );
+
+  static final ratings = Container(
+    padding: EdgeInsets.all(8),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Icon(
-          Icons.star,
-          color: Colors.blue[500],
-        ),
-        Icon(
-          Icons.star,
-          color: Colors.blue[500],
-        ),
-        Icon(
-          Icons.star,
-          color: Colors.blue[500],
-        ),
-        Icon(
-          Icons.star,
-          color: Colors.black,
-        ),
-        Icon(
-          Icons.star,
-          color: Colors.black,
+        stars,
+        Text(
+          '170 Reviews',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w800,
+            fontFamily: 'Roboto',
+            letterSpacing: 0.5,
+            fontSize: 12,
+          ),
         ),
       ],
-    );
+    ),
+  );
 
-    final ratings = Container(
+  static final descTextStyle = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.w800,
+    fontFamily: 'Roboto',
+    letterSpacing: 0.5,
+    fontSize: 12,
+    height: 2,
+  );
+
+  static final iconList = DefaultTextStyle.merge(
+    style: descTextStyle,
+    child: Container(
       padding: EdgeInsets.all(8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          stars,
-          Text(
-            '170 Reviews',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Roboto',
-              letterSpacing: 0.5,
-              fontSize: 12,
-            ),
+          Column(
+            children: [
+              Icon(Icons.kitchen, color: Colors.green[500]),
+              Text('PREP:'),
+              Text('25 min'),
+            ],
+          ),
+          Column(
+            children: [
+              Icon(Icons.timer, color: Colors.green[500]),
+              Text('COOK:'),
+              Text('1 hr'),
+            ],
+          ),
+          Column(
+            children: [
+              Icon(Icons.restaurant, color: Colors.green[500]),
+              Text('FEEDS:'),
+              Text('4-6'),
+            ],
           ),
         ],
       ),
-    );
+    ),
+  );
 
-    final descTextStyle = TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.w800,
-      fontFamily: 'Roboto',
-      letterSpacing: 0.5,
-      fontSize: 12,
-      height: 2,
-    );
+  final leftColumn = Container(
+    padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+    child: Column(
+      children: [
+        titleText,
+        subTitle,
+        ratings,
+        iconList,
+      ],
+    ),
+  );
 
-    final iconList = DefaultTextStyle.merge(
-      style: descTextStyle,
-      child: Container(
-        padding: EdgeInsets.all(8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: [
-                Icon(Icons.kitchen, color: Colors.green[500]),
-                Text('PREP:'),
-                Text('25 min'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(Icons.timer, color: Colors.green[500]),
-                Text('COOK:'),
-                Text('1 hr'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(Icons.restaurant, color: Colors.green[500]),
-                Text('FEEDS:'),
-                Text('4-6'),
-              ],
-            ),
-          ],
+  final mainImage = Image.asset(
+    'images/pavlova.jpg',
+    fit: BoxFit.fill,
+  );
+
+  Widget titleSection = Container(
+    padding: const EdgeInsets.all(32),
+    child: Row(
+      children: [
+        Expanded(
+          /*1*/
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /*2*/
+              Container(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(
+                  'Oeschinen Lake Campground',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Text(
+                'Kandersteg, Switzerland',
+                style: TextStyle(
+                  color: Colors.grey[500],
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+        /*3*/
+        Icon(
+          Icons.star,
+          color: Colors.red[500],
+        ),
+        Text('41'),
+      ],
+    ),
+  );
 
-    final leftColumn = Container(
-      padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
-      child: Column(
-        children: [
-          titleText,
-          subTitle,
-          ratings,
-          iconList,
-        ],
-      ),
+  static Widget _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          icon,
+          color: color,
+        ),
+        Container(
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        )
+      ],
     );
+  }
 
-    final mainImage = Image.asset(
-      'images/pavlova.jpg',
-      fit: BoxFit.fill,
-    );
+  Widget buttionSection = Container(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        _buildButtonColumn(Colors.red, Icons.call, "CALL"),
+        _buildButtonColumn(Colors.red, Icons.near_me, "NEAR ME"),
+        _buildButtonColumn(Colors.red, Icons.share, "SHARE"),
+      ],
+    ),
+  );
 
+  Widget textSection = Container(
+    padding: const EdgeInsets.all(32),
+    child: Text(
+      'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
+      'Alps. Situated 1,578 meters above sea level, it is one of the '
+      'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
+      'half-hour walk through pastures and pine forest, leads you to the '
+      'lake, which warms to 20 degrees Celsius in the summer. Activities '
+      'enjoyed here include rowing, and riding the summer toboggan run.',
+      softWrap: true,
+    ),
+  );
+
+  Widget _buildBody() {
+    switch (_bodyIndex) {
+      case 0:
+        return Center(
+          child: Container(
+            margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
+            height: 600,
+            child: Card(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 380,
+                    child: leftColumn,
+                  ),
+                  Container(
+                    width: 280,
+                    height: 320,
+                    child: mainImage,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      case 1:
+        return Center(
+          child: Container(
+            margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
+            height: 600,
+            child: Card(
+              child: _buildImageColumn(),
+            ),
+          ),
+        );
+      case 2:
+        return Center(
+          child: _useGridView ? _buildGrid() : _buildList(),
+        );
+      case 3:
+        return Center(
+          child: _buildStack(),
+        );
+      case 4:
+        return Center(
+          child: _buildCard(),
+        );
+      case 5:
+        return Column(
+          children: [
+            Image.asset(
+              'images/lake.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            buttionSection,
+            textSection,
+          ],
+        );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Layouts example"),
       ),
-      body: Center(
-/*        child: Container(
-          margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
-          height: 600,
-          child: Card(
-//            child: Row(
-//              crossAxisAlignment: CrossAxisAlignment.start,
-//              children: [
-//                Container(
-//                  width: 380,
-//                  child: leftColumn,
-//                ),
-//                Container(
-//                  width: 280,
-//                  height: 320,
-//                  child: mainImage,
-//                ),
-//              ],
-//            ),
-            child: _buildImageColumn(),
-          ),
-        ),*/
-//        child: _useGridView ? _buildGrid() : _buildList(),
-//        child: _buildStack(),
-        child: _buildCard(),
-      ),
+      body: _buildBody(),
     );
   }
 
