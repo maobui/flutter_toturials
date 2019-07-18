@@ -140,27 +140,28 @@ class Layouts extends StatelessWidget {
           margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
           height: 600,
           child: Card(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 380,
-                  child: leftColumn,
-                ),
-                Container(
-                  width: 280,
-                  height: 320,
-                  child: mainImage,
-                ),
-              ],
-            ),
+//            child: Row(
+//              crossAxisAlignment: CrossAxisAlignment.start,
+//              children: [
+//                Container(
+//                  width: 380,
+//                  child: leftColumn,
+//                ),
+//                Container(
+//                  width: 280,
+//                  height: 320,
+//                  child: mainImage,
+//                ),
+//              ],
+//            ),
+          child: _buildImageColumn(),
           ),
         ),
       ),
     );
   }
 
-  Widget buildRow() => Row(
+  Widget _buildRow() => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Image.asset('images/pic1.jpg'),
@@ -169,7 +170,7 @@ class Layouts extends StatelessWidget {
         ],
       );
 
-  Widget buildRowExpand() => Row(
+  Widget _buildRowExpand() => Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
@@ -183,7 +184,7 @@ class Layouts extends StatelessWidget {
           ),
         ],
       );
-  Widget buildRowExpandFlex() => Row(
+  Widget _buildRowExpandFlex() => Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
@@ -199,7 +200,7 @@ class Layouts extends StatelessWidget {
         ],
       );
 
-  Widget buildRowPacking() => Row(
+  Widget _buildRowPacking() => Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
@@ -225,7 +226,7 @@ class Layouts extends StatelessWidget {
         ],
       );
 
-  Widget buildColumn() => Column(
+  Widget _buildColumn() => Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Image.asset('images/pic1.jpg'),
@@ -233,4 +234,34 @@ class Layouts extends StatelessWidget {
           Image.asset('images/pic3.jpg')
         ],
       );
+
+  Widget _buildDecoratedImage(int imageIndex) => Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 10, color: Colors.black38),
+          borderRadius: const BorderRadius.all(const Radius.circular(8)),
+        ),
+        margin: const EdgeInsets.all(4),
+        child: Image.asset('images/pic$imageIndex.jpg'),
+      )
+  );
+
+  Widget _buildImageRow(int imageIndex) => Row(
+    children: [
+      _buildDecoratedImage(imageIndex),
+      _buildDecoratedImage(imageIndex + 1),
+    ],
+  );
+
+  Widget _buildImageColumn() => Container(
+    decoration: BoxDecoration(
+      color: Colors.black26,
+    ),
+    child: Column(
+      children: [
+        _buildImageRow(1),
+        _buildImageRow(3),
+      ],
+    ),
+  );
 }
