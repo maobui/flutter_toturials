@@ -158,7 +158,8 @@ class Layouts extends StatelessWidget {
             child: _buildImageColumn(),
           ),
         ),*/
-        child: _useGridView ? _buildGrid() : _buildList(),
+//        child: _useGridView ? _buildGrid() : _buildList(),
+        child: _buildStack(),
       ),
     );
   }
@@ -307,5 +308,26 @@ class Layouts extends StatelessWidget {
           icon,
           color: Colors.blue[500],
         ),
+      );
+
+  Widget _buildStack() => Stack(
+        alignment: const Alignment(0.6, 0.6),
+        children: <Widget>[
+          CircleAvatar(
+            backgroundImage: AssetImage('images/pic0.jpg'),
+            radius: 100,
+          ),
+          Container(
+            decoration: BoxDecoration(color: Colors.black45),
+            child: Text(
+              "About me",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
       );
 }
