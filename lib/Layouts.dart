@@ -4,13 +4,13 @@ class Layouts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final titleText = Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(16),
       child: Text(
         'Strawberry Pavlova',
         style: TextStyle(
           fontWeight: FontWeight.w800,
           letterSpacing: 0.5,
-          fontSize: 30,
+          fontSize: 20,
         ),
       ),
     );
@@ -22,7 +22,7 @@ class Layouts extends StatelessWidget {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Georgia',
-        fontSize: 25,
+        fontSize: 15,
       ),
     );
 
@@ -53,7 +53,7 @@ class Layouts extends StatelessWidget {
     );
 
     final ratings = Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -65,7 +65,7 @@ class Layouts extends StatelessWidget {
               fontWeight: FontWeight.w800,
               fontFamily: 'Roboto',
               letterSpacing: 0.5,
-              fontSize: 20,
+              fontSize: 12,
             ),
           ),
         ],
@@ -77,14 +77,14 @@ class Layouts extends StatelessWidget {
       fontWeight: FontWeight.w800,
       fontFamily: 'Roboto',
       letterSpacing: 0.5,
-      fontSize: 18,
+      fontSize: 12,
       height: 2,
     );
 
     final iconList = DefaultTextStyle.merge(
       style: descTextStyle,
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -115,7 +115,7 @@ class Layouts extends StatelessWidget {
     );
 
     final leftColumn = Container(
-      padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+      padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
       child: Column(
         children: [
           titleText,
@@ -128,7 +128,7 @@ class Layouts extends StatelessWidget {
 
     final mainImage = Image.asset(
       'images/pavlova.jpg',
-      fit: BoxFit.cover,
+      fit: BoxFit.fill,
     );
 
     return Scaffold(
@@ -137,17 +137,21 @@ class Layouts extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          margin: EdgeInsets.fromLTRB(0, 40, 0, 30),
+          margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
           height: 600,
           child: Card(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: 440,
+                  width: 380,
                   child: leftColumn,
                 ),
-                mainImage,
+                Container(
+                  width: 280,
+                  height: 320,
+                  child: mainImage,
+                ),
               ],
             ),
           ),
