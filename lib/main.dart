@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_toturials/Product.dart';
 import 'package:flutter_toturials/ShoppingList.dart';
 import 'package:flutter_toturials/Layouts.dart';
+import 'package:flutter_toturials/ManagingState.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
 //          Product(name: 'Chocolate chips'),
 //        ],
 //      ),
-    home: Layouts(),
+//    home: Layouts(),
+    home: ManagingState(),
     );
   }
 }
