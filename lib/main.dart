@@ -33,9 +33,6 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    void _clickButton() {
-      Navigator.pushNamed(context, '/signup');
-    }
 
     return Scaffold(
       appBar: AppBar(
@@ -48,10 +45,12 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Home Page'),
-            IconButton(
-              icon: Icon(Icons.navigate_next),
-              tooltip: 'NEXT',
-              onPressed: _clickButton,
+            FlatButton(
+              color: Colors.green,
+                onPressed: (){
+                  Navigator.pushNamed(context, '/signup');
+                },
+                child: Text('Sign Up'),
             ),
           ],
         ),
