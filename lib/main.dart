@@ -4,6 +4,7 @@ import 'package:flutter_toturials/Layouts.dart';
 import 'package:flutter_toturials/ManagingState.dart';
 import 'package:flutter_toturials/Navigation/NavigatorArgument.dart';
 import 'package:flutter_toturials/Navigation/NavigatorName.dart';
+import 'package:flutter_toturials/Navigation/NavigatorData.dart';
 
 //void main() => runApp(MyApp());
 //void main() => runApp(ShoppingApp());
@@ -11,6 +12,7 @@ import 'package:flutter_toturials/Navigation/NavigatorName.dart';
 //void main() => runApp(ManagingStategApp());
 //void main() => runApp(NaviArgApp());
 //void main() => runApp(NaviArgApp());
-void main() => runApp(NaviNameApp());
+//void main() => runApp(NaviNameApp());
+void main() => runApp(NaviDataApp());
 
 
