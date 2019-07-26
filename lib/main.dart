@@ -5,6 +5,7 @@ import 'package:flutter_toturials/ManagingState.dart';
 import 'package:flutter_toturials/Navigation/NavigatorArgument.dart';
 import 'package:flutter_toturials/Navigation/NavigatorName.dart';
 import 'package:flutter_toturials/Navigation/NavigatorData.dart';
+import 'package:flutter_toturials/Navigation/NavigatorSendData.dart';
 
 //void main() => runApp(MyApp());
 //void main() => runApp(ShoppingApp());
@@ -13,6 +14,34 @@ import 'package:flutter_toturials/Navigation/NavigatorData.dart';
 //void main() => runApp(NaviArgApp());
 //void main() => runApp(NaviArgApp());
 //void main() => runApp(NaviNameApp());
-void main() => runApp(NaviDataApp());
+//void main() => runApp(NaviDataApp());
+void main() => runApp(NaviSendDataApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: 'My App',
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home Page'),
+      ),
+      body: Center(
+        child: Text('Here!'),
+      ),
+    );
+  }
+  
+}
 
 
