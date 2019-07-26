@@ -3,8 +3,10 @@ import 'package:flutter_toturials/Product.dart';
 import 'package:flutter_toturials/ShoppingList.dart';
 import 'package:flutter_toturials/Layouts.dart';
 import 'package:flutter_toturials/ManagingState.dart';
+import 'package:flutter_toturials/NavigatorArgument.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(MyApp());
+void main() => runApp(NaviArgApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -33,7 +35,6 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter Code Sample for Navigator"),
@@ -47,10 +48,10 @@ class HomePage extends StatelessWidget {
             Text('Home Page'),
             FlatButton(
               color: Colors.green,
-                onPressed: (){
-                  Navigator.pushNamed(context, '/signup');
-                },
-                child: Text('Sign Up'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/signup');
+              },
+              child: Text('Sign Up'),
             ),
           ],
         ),
