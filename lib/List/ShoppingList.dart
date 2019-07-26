@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_toturials/Product.dart';
+import 'package:flutter_toturials/List/Product.dart';
+import 'package:flutter_toturials/List/ShoppingListItem.dart';
 
-import 'ShoppingListItem.dart';
 
 class ShoppingList extends StatefulWidget {
   ShoppingList({Key key, this.products}) : super(key: key);

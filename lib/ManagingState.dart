@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+class ManagingStategApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'ManagingState App',
+      home: ManagingState(),
+    );
+  }
+}
+
 class ManagingState extends StatelessWidget {
   int _bodyIndex = 0;
   @override

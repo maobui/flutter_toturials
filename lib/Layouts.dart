@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
 
+class LayoutsApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Layouts App',
+    home: Layouts(),
+    );
+  }
+
+}
+
 class Layouts extends StatelessWidget {
   static final _useGridView = false;
   static final _bodyIndex = 5;

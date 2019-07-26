@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_toturials/Product.dart';
+import 'package:flutter_toturials/List/Product.dart';
 
 typedef void CartChangedCallback(Product product, bool inCart);
 
