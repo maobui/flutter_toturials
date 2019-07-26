@@ -6,6 +6,7 @@ import 'package:flutter_toturials/Navigation/NavigatorArgument.dart';
 import 'package:flutter_toturials/Navigation/NavigatorName.dart';
 import 'package:flutter_toturials/Navigation/NavigatorData.dart';
 import 'package:flutter_toturials/Navigation/NavigatorSendData.dart';
+import 'package:flutter_toturials/Network/FetchData.dart';
 
 //void main() => runApp(MyApp());
 //void main() => runApp(ShoppingApp());
@@ -15,7 +16,8 @@ import 'package:flutter_toturials/Navigation/NavigatorSendData.dart';
 //void main() => runApp(NaviArgApp());
 //void main() => runApp(NaviNameApp());
 //void main() => runApp(NaviDataApp());
-void main() => runApp(NaviSendDataApp());
+//void main() => runApp(NaviSendDataApp());
+void main() => runApp(FetchDataApp(post: fetchPost(),));
 
 class MyApp extends StatelessWidget{
   @override
