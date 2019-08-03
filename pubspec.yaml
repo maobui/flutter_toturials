@@ -28,6 +28,8 @@ dependencies:
 
   web_socket_channel: ^1.0.14
 
+  sqflite: ^1.1.6+3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
