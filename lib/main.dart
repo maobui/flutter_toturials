@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_toturials/List/Shopping.dart';
 import 'package:flutter_toturials/Layouts.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_toturials/Network/WebSocketServer.dart';
 //import 'Persistence/RWFile.dart';
 import 'Persistence/SharedPrefs.dart';
 import 'Plugins/VideoPlayer.dart';
+import 'Plugins/CameraApp.dart';
 
 //void main() => runApp(MyApp());
 //void main() => runApp(ShoppingApp());
@@ -28,7 +30,16 @@ import 'Plugins/VideoPlayer.dart';
 //void main() => runApp(WebSocketServerApp());
 //void main() => runApp(RWFileApp());
 //void main() => runApp(SharedPrefsApp());
-void main() => runApp(VideoPlayerApp());
+//void main() => runApp(VideoPlayerApp());
+Future<void> main() async {
+  // Obtain a list of the available cameras on the device.
+  final cameras = await availableCameras();
+
+  // Get a specific camera from the list of available cameras.
+  final firstCamera = cameras.first;
+  
+  runApp(CameraApp(firstCamera: firstCamera));
+}
 
 class MyApp extends StatelessWidget{
   @override
