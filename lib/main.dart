@@ -10,7 +10,8 @@ import 'package:flutter_toturials/Network/FetchData.dart';
 import 'package:flutter_toturials/Network/FetchPhoto.dart';
 import 'package:flutter_toturials/Network/WebSocketServer.dart';
 
-import 'Persistence/RWFile.dart';
+//import 'Persistence/RWFile.dart';
+import 'Persistence/SharedPrefs.dart';
 
 //void main() => runApp(MyApp());
 //void main() => runApp(ShoppingApp());
@@ -24,7 +25,8 @@ import 'Persistence/RWFile.dart';
 //void main() => runApp(FetchDataApp(post: fetchPost(),));
 //void main() => runApp(FetchPhotoApp());
 //void main() => runApp(WebSocketServerApp());
-void main() => runApp(RWFileApp());
+//void main() => runApp(RWFileApp());
+void main() => runApp(SharedPrefsApp());
 
 class MyApp extends StatelessWidget{
   @override
