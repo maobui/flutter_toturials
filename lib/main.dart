@@ -12,6 +12,7 @@ import 'package:flutter_toturials/Network/WebSocketServer.dart';
 
 //import 'Persistence/RWFile.dart';
 import 'Persistence/SharedPrefs.dart';
+import 'Plugins/VideoPlayer.dart';
 
 //void main() => runApp(MyApp());
 //void main() => runApp(ShoppingApp());
@@ -26,7 +27,8 @@ import 'Persistence/SharedPrefs.dart';
 //void main() => runApp(FetchPhotoApp());
 //void main() => runApp(WebSocketServerApp());
 //void main() => runApp(RWFileApp());
-void main() => runApp(SharedPrefsApp());
+//void main() => runApp(SharedPrefsApp());
+void main() => runApp(VideoPlayerApp());
 
 class MyApp extends StatelessWidget{
   @override
